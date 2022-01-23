@@ -1,13 +1,13 @@
-#define _GNU_SOURCE  
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/wait.h>
 #include <sched.h>
+#include <sys/wait.h>
 
 #define YIGIN_BOYUTU 1024
 
 int yeni_process() { // Child process'in çalıştıracağı fonksiyon
-	printf("Child process çalıştı.");
+	puts("\nChild process çalıştı.\n");
 	return 0;
 } 
 
@@ -30,7 +30,7 @@ int main() {
 	// Child process'in tamamlanmasını bekliyoruz
 	pid = waitpid(pid, NULL, 0);
 
-	printf("Child process sonlandi");
+	puts("\nChild process sonlandi\n");
 
 	// Bellegi serbest birak
 	free(yigin);
